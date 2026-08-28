@@ -171,3 +171,51 @@
   color: var(--text-tertiary);
   font-style: italic;
 }
+
+/* Below this width, the fixed pixel columns (44px/108px/92px) leave almost
+   no room for the actual transcript text and truncate the header labels
+   (e.g. "Transcript" becomes "Trans"). Switch to a stacked card layout
+   instead: a compact meta row on top, full-width text below - this uses
+   grid-template-areas so no markup/component changes are needed, only
+   re-arranging where each existing element renders via CSS. */
+@media (max-width: 640px) {
+  .transcript-feed__header {
+    display: none; /* column headers don't make sense once it's no longer a table */
+  }
+
+  .transcript-line {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas: "num speaker time time" "text text text text";
+    column-gap: 8px;
+    row-gap: 6px;
+    padding: 12px 14px;
+    align-items: center;
+  }
+
+  .transcript-line__num {
+    grid-area: num;
+    text-align: left;
+  }
+
+  .transcript-line__speaker-wrap,
+  .transcript-line__speaker {
+    grid-area: speaker;
+  }
+
+  .transcript-line__meta {
+    grid-area: time;
+    justify-content: flex-end;
+  }
+
+  .transcript-line__text {
+    grid-area: text;
+    font-size: 14.5px;
+  }
+
+  .transcript-line__flag {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}

@@ -36,3 +36,19 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 400px) {
+  .session-stats__item {
+    padding: 12px 12px;
+    min-width: 0; /* allows grid items to shrink below their content's natural width instead of overflowing */
+  }
+
+  .session-stats__value {
+    font-size: 19px;
+  }
+
+  .session-stats__label {
+    font-size: 9.5px;
+    overflow-wrap: break-word;
+  }
+}
