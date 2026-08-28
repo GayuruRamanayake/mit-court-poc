@@ -1,0 +1,127 @@
+.history-panel__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.history-panel {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 440px;
+  max-width: calc(100vw - 48px);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.history-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.history-panel__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.history-panel__close {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-tertiary);
+  padding: 0 4px;
+}
+
+.history-panel__close:hover {
+  color: var(--text-primary);
+}
+
+.history-panel__note {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  padding: 12px 20px 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.history-panel__empty {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+.history-panel__list {
+  overflow-y: auto;
+  padding: 10px 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-panel__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.history-panel__item:hover {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.history-panel__item--current {
+  border-color: var(--accent-brass-dim);
+}
+
+.history-panel__item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.history-panel__item-date {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+
+.history-panel__item-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.history-panel__delete {
+  font-size: 14px;
+  opacity: 0.5;
+  padding: 4px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.history-panel__delete:hover {
+  opacity: 1;
+  background: rgba(178, 58, 72, 0.15);
+}

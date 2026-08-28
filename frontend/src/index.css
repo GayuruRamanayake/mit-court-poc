@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Color tokens */
+  --bg: #0F1215;
+  --surface: #171B20;
+  --surface-raised: #1D2229;
+  --border: #2A3038;
+  --border-subtle: #20252C;
+
+  --text-primary: #E9EAEC;
+  --text-secondary: #9198A3;
+  --text-tertiary: #5C636E;
+
+  --accent-brass: #C8A24D;
+  --accent-brass-dim: #8A7238;
+  --accent-live: #B23A48;
+  --accent-live-glow: rgba(178, 58, 72, 0.35);
+
+  --lang-si: #6B9BD1;
+  --lang-ta: #7EB89A;
+  --lang-en: #C8A24D;
+
+  /* Type */
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent-brass-dim);
+  color: var(--text-primary);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--accent-brass);
+  outline-offset: 2px;
+}

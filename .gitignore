@@ -1,36 +1,76 @@
+# ==========================
 # Environment variables / secrets
+# ==========================
 .env
 .env.local
+.env.*.local
 *.key
 
-# Python
+# ==========================
+# Python (backend)
+# ==========================
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
 venv/
 env/
 .venv/
-audio/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Node (for the frontend, later)
+# ==========================
+# Node / React / Vite (frontend)
+# ==========================
 node_modules/
 dist/
+dist-ssr/
 build/
 .next/
+.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Audio test files (can be large, and may contain sensitive test data)
+# ==========================
+# Audio files (test/session data - can be large and/or sensitive)
+# ==========================
+audio/
+test_audio/
 *.mp3
 *.wav
 *.m4a
-test_audio/
+*.webm
+*.ogg
 
-# OS/editor junk
+# ==========================
+# Downloaded ML models (if pyannote/whisper are added locally later)
+# ==========================
+*.bin
+*.pt
+*.onnx
+*.safetensors
+
+# ==========================
+# Logs
+# ==========================
+*.log
+logs/
+
+# ==========================
+# OS / editor junk
+# ==========================
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+*.swp
 
-# Downloaded models (if we end up using pyannote/whisper locally)
-*.bin
-*.pt
-*.onnx
+# ==========================
+# Build/deploy artifacts
+# ==========================
+*.zip
+.railway/
