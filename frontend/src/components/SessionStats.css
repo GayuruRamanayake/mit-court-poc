@@ -33,7 +33,13 @@
 
 @media (max-width: 640px) {
   .session-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .session-stats__item {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
   }
 }
 
