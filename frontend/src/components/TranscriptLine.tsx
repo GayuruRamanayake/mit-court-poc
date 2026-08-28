@@ -81,7 +81,8 @@ export function TranscriptLine({
           onClick={openMenu}
           title="Click to rename or reassign this speaker"
         >
-          {displayName}
+          <span className="transcript-line__speaker-text">{displayName}</span>
+          <span className="transcript-line__edit-icon" aria-hidden="true">✎</span>
         </button>
 
         {menuOpen && (
@@ -107,6 +108,7 @@ export function TranscriptLine({
                   value={renameValue}
                   onChange={(e) => setRenameValue(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && submitRename()}
+                  onFocus={(e) => e.target.select()}
                   autoFocus
                 />
                 <div className="speaker-popover__actions">
