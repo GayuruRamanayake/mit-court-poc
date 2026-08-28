@@ -1,8 +1,12 @@
 .transcript-line__speaker-wrap {
   position: relative;
+  min-width: 0; /* allows this grid item to shrink below its content's size instead of overflowing */
+  max-width: 100%;
 }
 
 .transcript-line__speaker {
+  display: block;
+  max-width: 100%;
   background: transparent;
   border: none;
   padding: 0;
